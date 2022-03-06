@@ -1,0 +1,46 @@
+﻿@model IEnumerable<CarRentt.Models.Modele>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Categorie.NomCategorie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SerieVoiture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MarqueVoiture)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Categorie.NomCategorie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SerieVoiture)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MarqueVoiture)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ModeleID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ModeleID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ModeleID })
+        </td>
+    </tr>
+}
+
+</table>

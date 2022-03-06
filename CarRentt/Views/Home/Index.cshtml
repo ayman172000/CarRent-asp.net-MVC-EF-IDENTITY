@@ -1,0 +1,33 @@
+﻿@model IEnumerable<CarRentt.Models.Categorie>
+@{
+    ViewBag.Title = "Home Page";
+}
+<div class="jumbotron">
+    <h1>Trouver Votre Voiture</h1>
+    @using (@Html.BeginForm("Recherche", "Home", FormMethod.Get))
+    {
+        <h4>Date de depart</h4>
+        <input type="datetime-local" name="dateDebut" placeholder="date de depart" id="dateDebut" />
+        <h4>categorie</h4>
+        <select class="form-control" id="categorieId" name="categorieId">
+            @foreach (var item in Model)
+            {
+                <option value="@item.CategorieID">@item.NomCategorie</option>
+            }
+        </select>
+        <input type="submit" value="rechercher" />
+    }
+</div>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <h2>@Html.DisplayFor(modelItem => item.NomCategorie)</h2>
+            <p>
+                @Html.DisplayFor(modelItem => item.DescriptionCategorie)
+            </p>
+            <p>@Html.ActionLink("Plus...", "VoitureCategorie", "Voitures", new { id = item.CategorieID }, null)</p>
+        </div>
+        <h1></h1>
+    }
+</div>

@@ -1,0 +1,35 @@
+﻿@model CarRentt.Models.Categorie
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Categorie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomCategorie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomCategorie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionCategorie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionCategorie)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CategorieID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

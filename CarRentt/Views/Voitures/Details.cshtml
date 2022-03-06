@@ -1,0 +1,66 @@
+﻿@model CarRentt.Models.Voiture
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Voiture</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Modele.SerieVoiture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Modele.SerieVoiture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Matricule)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Matricule)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateDeMiseEnCirculation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateDeMiseEnCirculation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeCarburant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeCarburant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrixJournaliere)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrixJournaliere)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            <img src="~/Image/voitures/@Model.Image" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Ajouter au panier", "AjouterPanier", new { id = Model.VoitureID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

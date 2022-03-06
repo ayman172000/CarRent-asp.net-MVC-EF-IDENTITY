@@ -1,0 +1,51 @@
+﻿@model CarRentt.Models.LigneDeReservation
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/_ViewStart.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LigneDeReservation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Reservation.UserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reservation.UserID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Voiture.Matricule)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Voiture.Matricule)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duree)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duree)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrixTTC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrixTTC)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

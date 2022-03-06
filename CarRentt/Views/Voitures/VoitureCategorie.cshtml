@@ -1,0 +1,64 @@
+﻿@model IEnumerable<CarRentt.Models.Voiture>
+
+@{
+    ViewBag.Title = "VoitureCategorie";
+}
+<h2>VoitureCategorie</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Modele.SerieVoiture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Matricule)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateDeMiseEnCirculation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeCarburant)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrixJournaliere)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsAvailable)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src="~/Image/voitures/@item.Image" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modele.SerieVoiture)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matricule)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateDeMiseEnCirculation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeCarburant)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrixJournaliere)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsAvailable)
+            </td>
+            <td>
+                @Html.ActionLink("Ajouter au panier", "AjouterPanier", new { id = item.VoitureID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.VoitureID })
+            </td>
+        </tr>
+    }
+
+</table>

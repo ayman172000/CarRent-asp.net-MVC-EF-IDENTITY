@@ -1,0 +1,48 @@
+﻿@model IEnumerable<CarRentt.Models.LigneDeReservation>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Reservation.Etat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Voiture.Matricule)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duree)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrixTTC)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reservation.Etat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Voiture.Matricule)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duree)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrixTTC)
+            </td>
+        </tr>
+    }
+
+</table>
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
